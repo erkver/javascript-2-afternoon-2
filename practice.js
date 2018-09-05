@@ -126,7 +126,20 @@ var numbersArray = [1,2,34,54,55,34,32,11,19,17,54,66,13];
 */
 
 //Code Here
+const evensArr = [];
+const oddsArr = [];
+function divider(numbersArray) {
+  for (let i = 0; i < numbersArray.length; i++) {
+    if (numbersArray[i] % 2 === 0) {
+      evensArr.push(numbersArray[i]);
+    } else {
+      oddsArr.push(numbersArray[i]);
+    }
+  }
+  return [evensArr, oddsArr];
+}
 
+//divider(numbersArray);
 
 
 ////////// PROBLEM 7 //////////
@@ -147,7 +160,15 @@ var getRandomArbitrary = function() {
 */
 
 //Code Here
-
+function finder(array) {
+  let random = getRandomArbitrary();
+  for (let i = 0; i < array.length; i++) {
+    if(array[i] === random) {
+      return true;
+    }
+  }
+  return false;
+}
 
 
 ////////// PROBLEM 8 //////////
@@ -176,6 +197,28 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 */
 
 //Code Here
+function removeItem(myGroceryList, item) {
+  if(myGroceryList && item) {
+  } else {
+    return [];
+  }
+  for(let i = 0; i < myGroceryList.length; i++) {
+    if (myGroceryList[i] === item) {
+      myGroceryList.splice(i, 1);
+      return myGroceryList;
+    }
+  }
+  return myGroceryList
+}
+
+function addItem(myGroceryList, item) {
+  if (myGroceryList && item) {
+  } else {
+    return [];
+  }
+  myGroceryList.push(item);
+  return myGroceryList;
+}
 
 
 
@@ -186,7 +229,13 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 */
 
 //Code Here
-
+function maker(){
+  const arr = [];
+  for (let i = 1; i <= 215; i++) {
+    arr.push(i);
+  }
+  return arr
+}
 
 
 ////////// PROBLEM 10 //////////
@@ -202,7 +251,10 @@ var numbers = [5, '9', 16, 19, '25', '34', 48];
 */
   
 //Code Here
-
+const addTen = numbers => numbers.map(x => {
+  x = parseInt(x, 10)
+  return x + 10;
+  });
 
 
 ////////// PROBLEM 11 //////////
@@ -227,7 +279,7 @@ for(var i = 0; i < num2; i++){
 */
 
 //Code Here
-
+const longer = (arr1, arr2) => arr1.length > arr2.length ? arr1 : arr2;
 
 
 /*
@@ -239,7 +291,7 @@ for(var i = 0; i < num2; i++){
 */
 
 //Code Here
-
+const both = (arr1, arr2) => arr1.filter(val => -1 !== arr2.indexOf(val));
 
 
 ////////// PROBLEM 12 //////////
@@ -279,7 +331,8 @@ var colt = {
 */
 
 //Code Here
-
+devMountainEmployees.push(tyler, cahlan, ryan, colt);
+console.log(devMountainEmployees);
 
 
 /*
@@ -288,7 +341,11 @@ var colt = {
 */
 
 //Code Here
-
+for(let i = 0; i < devMountainEmployees.length; i++) {
+  if(devMountainEmployees[i].name === "Cahlan") {
+    devMountainEmployees.splice(i, 1);
+  }
+}
 
 
 ////////// PROBLEM 13 //////////
@@ -300,7 +357,7 @@ var colt = {
 */
 
 //Code Here
-
+const users = [];
 
 
 /*
@@ -319,7 +376,7 @@ var user1 = {
 // Do not edit the code above.
 
 //Code Here
-
+users.push(user1, {}, {})
 
 
 /*
@@ -333,8 +390,11 @@ var user1 = {
 */
 
 //Code Here
-
-
+for (let i = 0; i < users.length; i++) {
+  if (users[i].email === "tylermcginnis33@gmail.com") {
+    users.splice(i, 1);
+  }
+}
 
 /*
   The activity we just did is very much how data works in 'the real world'.
